@@ -1,4 +1,4 @@
-/* Left Side of Page Div */
+/* LEFT SIDE DIV */
 #left-column {
 background-color: #1A1A1A;
 background-size: 100%;
@@ -13,7 +13,7 @@ text-align: center;
 	margin-left: -2.5%;
 }
 
-#user-form {
+#title-input {
 	color: white;
 }
 
@@ -29,12 +29,13 @@ text-align: center;
 	color: #7DFF60;
 }
 
-/* Main Content Div */
+/* MAIN CONTENT DIV */
 #main-content {
 background-image: url("../images/lightspeed_bg.jpg");
 background-size: 100%;
 position: relative;
 height: 830px;
+text-align: center;
 }
 
 #top-row {
@@ -45,8 +46,8 @@ height: 830px;
 #data-box {
 	background-color: black;
 	position: relative;
-	width: 880px;
-	height: 496px;
+	width: 100%;
+	height: auto;
 	border-style: solid;
 	border-color: #2A2A28;
 	border-width: 5px;
@@ -54,12 +55,11 @@ height: 830px;
 
 #default_screen {
 	position: relative;
-	width: 864px;
-	height: 486px;
-	margin-left: -1%;
+	width: 100%;
+	height: auto;
 }
 
-
+/* MISC */
 h1 {
 	font-family: 'Audiowide', cursive;
 	color: white;
@@ -72,3 +72,9 @@ h3 {
 	font-family: 'Oswald', sans-serif;
 	line-height: 30px;
 }
+
+p {
+	color: white;
+}
+
+
