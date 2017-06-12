@@ -1,0 +1,74 @@
+/* Left Side of Page Div */
+#left-column {
+background-color: #1A1A1A;
+background-size: 100%;
+position: relative;
+height: 830px;
+text-align: center;
+}
+
+#yoda-pic {
+	width: 105%;
+	height: auto;
+	margin-left: -2.5%;
+}
+
+#user-form {
+	color: white;
+}
+
+#blue {
+ color: #1E90FF;
+}
+
+#red {
+	color: #E20404;
+}
+
+#green {
+	color: #7DFF60;
+}
+
+/* Main Content Div */
+#main-content {
+background-image: url("../images/lightspeed_bg.jpg");
+background-size: 100%;
+position: relative;
+height: 830px;
+}
+
+#top-row {
+	position: relative;
+	height: 18%;
+}
+
+#data-box {
+	background-color: black;
+	position: relative;
+	width: 880px;
+	height: 496px;
+	border-style: solid;
+	border-color: #2A2A28;
+	border-width: 5px;
+}
+
+#default_screen {
+	position: relative;
+	width: 864px;
+	height: 486px;
+	margin-left: -1%;
+}
+
+
+h1 {
+	font-family: 'Audiowide', cursive;
+	color: white;
+	font-size: 40px;
+}
+
+h3 {
+	color: white;
+	font-size: 24px;
+	font-family: 'Oswald', sans-serif;
+	line-height: 30px;
+}
