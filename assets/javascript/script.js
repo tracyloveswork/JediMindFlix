@@ -7,6 +7,8 @@ var title ="";
 $("#check-movie").on("click", function(event) {
   event.preventDefault();
 
+  $('#default_screen').remove();
+
   // Clear last message
   $("#netflix").empty();
   $("#ratingDisplay").empty();
@@ -102,7 +104,7 @@ $("#check-movie").on("click", function(event) {
     }).fail(function(){
 
       // Creating an error message
-      var printError = $("<h2>").text("Watch this on Netflix, you cannot.");
+      var printError = $("<h3>").text("Watch this on Netflix, you cannot.");
 
       // Appending the title
       $("#netflix").append(printError);
