@@ -41,8 +41,8 @@ $("#check-movie").on("click", function(event) {
 
   // Creating an element to hold the title and ratings
   var printTitle = $("<h3>").text("Watch " + showTitle + " on Netflix, you can. Hmmm.");
-  var printSummary = "<div class=\"row\"><div class=\"col m3\"><img height=\"200px\" src=\"" + posterURL+ "\" alt=\"" + title + "\" /></div><div class=\"col m9\"><span id=\"printSummary\"></span></div></div>";
-  var printRating = "<table id=\"ratings-table\"><thead><tr><th>Judge me by my ratings, do you?</th></tr></thead><tbody><tr><td>Netflix rating: " + netflixRating + "</td></tr></tbody></table>";
+  var printSummary = "<div class=\"row\"><div class=\"col m3\"><img height=\"200px\" src=\"" + posterURL+ "\" alt=\"" + title + "\" /></div><div id='plot' class=\"col m9\"><br><br><br><span id=\"printSummary\"></span></div></div>";
+  var printRating = "<table id=\"ratings-table\"><thead><tr><th><div id='table_title'>Judge me by my ratings, do you?</div></th></tr></thead><tbody><tr><td><img id='saber' src='assets/images/lightSaberGreen.png'>&nbsp;&nbsp;&nbsp; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - &nbsp;&nbsp;&nbsp;Netflix rating: " + netflixRating + "</td></tr></tbody></table>";
 
   // Appending the title and rating. 
   $("#netflix").append(printTitle);
@@ -97,7 +97,7 @@ $("#check-movie").on("click", function(event) {
       } else {
 
         // Add ratings data into the table
-        $("#ratings-table > tbody").append("<tr><td>" + response.Ratings[i].Source + ": " + response.Ratings[i].Value + "</td><td>");
+        $("#ratings-table > tbody").append("<tr><td><img id='saber' src='assets/images/lightSaberGreen.png'>&nbsp;&nbsp;&nbsp; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - &nbsp;&nbsp;&nbsp;" + response.Ratings[i].Source + ": " + response.Ratings[i].Value + "</td><td>");
 
           }
         }
@@ -111,7 +111,7 @@ $("#check-movie").on("click", function(event) {
 
       // Creating an error message
       var printError = $("<h3>").text("Watch this on Netflix, you cannot.");
-      var errorImage = "<div id=\"errorImage\"><img src=\"assets/images/fail.gif\" alt=\"Luke Skywalker screams, No!\"/></div>";
+      var errorImage = "<div id=\"errorImage\"><img src=\"assets/images/fail.gif\" alt=\"Luke Skywalker screams, No!\"/></div><br>";
       printError.append(errorImage);
 
       // Appending the title

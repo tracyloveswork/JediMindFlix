@@ -40,7 +40,7 @@ text-align: center;
 
 #top-row {
 	position: relative;
-	height: 18%;
+	height: 15%;
 }
 
 #data-box {
@@ -59,6 +59,19 @@ text-align: center;
 	height: auto;
 }
 
+#table_title {
+	margin-left: 4%;
+}
+
+#saber {
+	width: 4%;
+	margin-left: 4%;
+}
+
+ #plot {
+ 	text-align: left;
+}
+
 /* MISC */
 h1 {
 	font-family: 'Audiowide', cursive;
@@ -68,13 +81,15 @@ h1 {
 
 h3 {
 	color: white;
-	font-size: 24px;
+	font-size: 35px;
 	font-family: 'Oswald', sans-serif;
-	line-height: 30px;
+	line-height: 45px;
 }
 
 p, body {
 	color: white;
+	font-family: 'Acme', sans-serif;
+	font-size: 20px;
 }
 
 #errorImage {
