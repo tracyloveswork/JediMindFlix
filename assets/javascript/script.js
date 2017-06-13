@@ -11,6 +11,7 @@ $("#check-movie").on("click", function(event) {
 
   // Clear last message
   $("#netflix").empty();
+  $("#yodaSpeak").empty();
   $("#ratingDisplay").empty();
 
 
@@ -32,20 +33,21 @@ $("#check-movie").on("click", function(event) {
   }).done(function(response) {
     console.log(response);
 
-  // Storing the title
+  // Storing the title, ratings, poster and summary
   var showTitle = response.show_title;
   var netflixRating = response.rating;
-
-  // Creating an element to hold the title
-  var printTitle = $("<h3>").text("Watch " + showTitle + " on Netflix, you can. Hmmm.");
-  var printRating = $("<p>").text("Netflix rating: " + netflixRating);
-
-  // Appending the title
-  $("#netflix").append(printTitle);
-  $("#ratingDisplay").append(printRating);
-
-  // Storing the summary
+  var posterURL = response.poster;
   summary = response.summary;
+
+  // Creating an element to hold the title and ratings
+  var printTitle = $("<h3>").text("Watch " + showTitle + " on Netflix, you can. Hmmm.");
+  var printSummary = "<div class=\"row\"><div class=\"col m3\"><img height=\"200px\" src=\"" + posterURL+ "\" alt=\"" + title + "\" /></div><div class=\"col m9\"><span id=\"printSummary\"></span></div></div>";
+  var printRating = "<table id=\"ratings-table\"><thead><tr><th>Judge me by my ratings, do you?</th></tr></thead><tbody><tr><td>Netflix rating: " + netflixRating + "</td></tr></tbody></table>";
+
+  // Appending the title and rating. 
+  $("#netflix").append(printTitle);
+  $("#yodaSpeak").append(printSummary);
+  $("#ratingDisplay").append(printRating);
 
   // Run Yoda Speak API >> Send resulting summary to yoda.
   var queryURLyoda = "https://yoda.p.mashape.com/yoda?sentence=" + summary;
@@ -58,16 +60,20 @@ $("#check-movie").on("click", function(event) {
       },
       method: "GET"
     }).done(function(response) {
+
       console.log(response);
 
-      // Creating an element to hold the yodaSummary
-      var printSummary = $("<p>").text(response);
+      var yodaSummary = response;
 
       // Appending the summary
-      $("#netflix").append(printSummary);
+      $("#printSummary").append(yodaSummary);
       
       }).fail(function(){
       yodaSummary = summary;
+
+      // Appending the summary as is
+      $("#printSummary").append(yodaSummary);
+
       });
       // End of yoda ajax call
 
@@ -86,12 +92,12 @@ $("#check-movie").on("click", function(event) {
         // Check to see if one of them is a Netflix rating... Do not use Netflix
         if (response.Ratings[i].Source == "Netflix") {
 
-        console.log("There is already a Neflix rating.");
+        console.log("There is already a Netflix rating.");
 
       } else {
 
-        var addRating = $("<p>").text(response.Ratings[i].Source + ": " + response.Ratings[i].Value);
-        $("#ratingDisplay").append(addRating);
+        // Add ratings data into the table
+        $("#ratings-table > tbody").append("<tr><td>" + response.Ratings[i].Source + ": " + response.Ratings[i].Value + "</td><td>");
 
           }
         }
@@ -105,6 +111,8 @@ $("#check-movie").on("click", function(event) {
 
       // Creating an error message
       var printError = $("<h3>").text("Watch this on Netflix, you cannot.");
+      var errorImage = "<div id=\"errorImage\"><img src=\"assets/images/fail.gif\" alt=\"Luke Skywalker screams, No!\"/></div>";
+      printError.append(errorImage);
 
       // Appending the title
       $("#netflix").append(printError);

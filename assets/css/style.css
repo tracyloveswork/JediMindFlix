@@ -73,8 +73,12 @@ h3 {
 	line-height: 30px;
 }
 
-p {
+p, body {
 	color: white;
+}
+
+#errorImage {
+	padding-top: 20px;
 }
 
 
