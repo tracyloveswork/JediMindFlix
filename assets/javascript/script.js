@@ -26,7 +26,6 @@ $("#check-movie").on("click", function(event) {
   $.ajax({
     url: queryURLtitle,
     headers: {
-    // "X-Mashape-Key": key,
     "Accept": "application/json"
     },
     method: "GET"
