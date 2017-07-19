@@ -25,6 +25,7 @@ $("#check-movie").on("click", function(event) {
 
   $.ajax({
     url: queryURLtitle,
+    crossDomain: true,
     headers: {
     "Accept": "application/json"
     },
