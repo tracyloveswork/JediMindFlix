@@ -19,14 +19,14 @@ $("#check-movie").on("click", function(event) {
   title = $("#title-input").val().trim();
 
   // Run netflix API
-  var queryURLtitle = "https://community-netflix-roulette.p.mashape.com/api.php?title=" + title;
+  var queryURLtitle = "https://netflixroulette.net/api/api.php?title=" + title;
 
   var key = "bh5PH4M5r6mshqeGupreXyWUwOCzp1gPcqajsnF7sxA3FjgZkO";
 
   $.ajax({
     url: queryURLtitle,
     headers: {
-    "X-Mashape-Key": key,
+    // "X-Mashape-Key": key,
     "Accept": "application/json"
     },
     method: "GET"
@@ -41,7 +41,7 @@ $("#check-movie").on("click", function(event) {
 
   // Creating an element to hold the title and ratings
   var printTitle = $("<h3>").text("Watch " + showTitle + " on Netflix, you can. Hmmm.");
-  var printSummary = "<div class=\"row\"><div class=\"col m3\"><img height=\"200px\" src=\"" + posterURL+ "\" alt=\"" + title + "\" /></div><div id='plot' class=\"col m9\"><br><br><br><span id=\"printSummary\"></span></div></div>";
+  var printSummary = "<div class=\"row\"><div class=\"col m3\"><img height=\"200px\" src=\"" + posterURL + "\" alt=\"" + title + "\" /></div><div id='plot' class=\"col m9\"><br><br><br><span id=\"printSummary\"></span></div></div>";
   var printRating = "<table id=\"ratings-table\"><thead><tr><th><div id='table_title'>Judge me by my ratings, do you?</div></th></tr></thead><tbody><tr><td><img id='saber' src='assets/images/lightSaberGreen.png'>&nbsp;&nbsp;&nbsp; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - &nbsp;&nbsp;&nbsp;Netflix rating: " + netflixRating + "</td></tr></tbody></table>";
 
   // Appending the title and rating. 
